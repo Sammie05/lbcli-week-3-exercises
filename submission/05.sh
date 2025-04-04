@@ -8,7 +8,7 @@ TRANSACTION="01000000000101c8b0928edebbec5e698d5f86d0474595d9f6a5b2e4e3772cd9d10
 
 TXID=$(bitcoin-cli -regtest decoderawtransaction "$TRANSACTION" | jq -r .txid )
 
-echo "Transaction ID: $TXID"
+echo "TRANSACTION ID: $TXID"
 
 AMOUNT=0.2
 
