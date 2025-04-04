@@ -6,6 +6,6 @@ REQUIRED_SIGNATURES=1
 
 multisig_pubkeys=$(bitcoin-cli -regtest decoderawtransaction $transaction | jq '[.vin.[].txinwitness.[1]]')
 
-multisig_address=$(bitcoin-cli -regtest createmultisig $REQUIRED_SIGNATURES=1 "$multisig_pubkeys" |  jq -r .address)
+multisig_address=$(bitcoin-cli -regtest createmultisig $REQUIRED_SIGNATURES "$multisig_pubkeys" |  jq -r .address)
 
 echo "$multisig_address"
